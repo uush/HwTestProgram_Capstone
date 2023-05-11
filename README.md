@@ -1,3 +1,3 @@
 # HwTestProgram_Capstone
-<h2>Ä¸½ºÅæµğÀÚÀÎ2</h2>
-<h3> HW Test Program °³¹ß (C, C#)</h3>
+<h2>ìº¡ìŠ¤í†¤ë””ìì¸2</h2>
+<h3> HW Test Program ê°œë°œ (C, C#)</h3>
