@@ -14,6 +14,7 @@ void setup() {
   pinMode(Red, OUTPUT);
   pinMode(Green, OUTPUT);
   pinMode(Blue, OUTPUT);
+  digitalWrite(SS,LOW);
 }
 
 void loop() {
@@ -45,7 +46,7 @@ void loop() {
 void FileRW(){
   dataFile = SD.open("data.txt", FILE_WRITE); // dataFile 초기화
   if(dataFile){
-    dataFile.println("Hello, world!");
+    dataFile.write("Hello, world!");
     dataFile.close();
     Serial.println("File Writing is complete");
 
@@ -57,7 +58,7 @@ void FileRW(){
     if(dataFile){
       Serial.println("File Reading\n");
       while(dataFile.available()){
-          Serial.print(dataFile.read());
+          Serial.write(dataFile.read());
       }
       dataFile.close();
     }
