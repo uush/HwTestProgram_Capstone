@@ -8,6 +8,9 @@ File testF;
  * MOSI - pin 11
  * SCK - pin 13
  * CS(SS) - pin 10
+ * RED - pin 6
+ * GREEN - pin 5
+ * BLUE - pin 3
  */
 
 void setup() {
@@ -47,7 +50,11 @@ void loop() {
 
 void FileRW(int num){
   testF.open("test.txt", FILE_WRITE);
+  digitalWrite(6,HIGH);
+  delay(500);
+  digitalWrite(6,LOW);
   testF.println(num);
+  testF.flush();
   testF.close();
   Serial.println("done");
 }
