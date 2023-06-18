@@ -2,6 +2,7 @@
 #include <SPI.h>
 SdFat sd;
 File testF;
+
 /*
  * VCC - pin 3.3V
  * MISO - pin 12
@@ -25,24 +26,24 @@ void loop() {
 
     switch(modeNum){
       case '0':
-        SPI.endTransaction();
         SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE0));
         FileRW(1);
+        SPI.endTransaction();
         break;
       case '1':
-        SPI.endTransaction();
         SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE1));
         FileRW(2);
+        SPI.endTransaction();
         break;
       case '2':
-        SPI.endTransaction();
         SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE2));
         FileRW(3);
+        SPI.endTransaction();
         break;
       case '3':
-        SPI.endTransaction();
         SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE3));
         FileRW(4);
+        SPI.endTransaction();
         break;
     }
   }

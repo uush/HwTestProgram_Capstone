@@ -21,6 +21,7 @@ namespace hwtestForm
         private void Form1_Load(object sender, EventArgs e)
         {
             port = new SerialPort("COM3", 9600);
+
         }
 
         private void button1_Click(object sender, EventArgs e)

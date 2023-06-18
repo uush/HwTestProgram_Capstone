@@ -7,15 +7,12 @@
  ** SS - pin 4
  */
 File testF;
+
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(SS, OUTPUT);
-  SPI.begin();  //SPI 통신을 초기화한다.
   Serial.begin(9600);
-  SD.begin(SS);
-  digitalWrite(SS,LOW);
-  SPI.setBitOrder(MSBFIRST); // 최상의 비트부터 전송 (기본값)
-  SPI.setClockDivider(SPI_CLOCK_DIV16); // 클럭 속도 설정
+  if(!SD.begin(4)){
+    Serial.println("SD 초기화 실패");
+  }
 }
 
 void loop() {
@@ -24,34 +21,41 @@ void loop() {
     char modeNum = Serial.read();
 
   switch(modeNum){
-    case '1':
-      SPI.endTransaction();
+    case '0':
       SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE0));
-      FileRW(1);
+      FileRW("test0.txt", modeNum);
+      SPI.endTransaction();
+      break;
+    case '1':
+      SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE1));
+      FileRW("test1.txt", modeNum);
+      SPI.endTransaction();
       break;
     case '2':
+      SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE2));
+      FileRW("test2.txt", modeNum);
       SPI.endTransaction();
-      SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE1));
-      FileRW(2);
       break;
     case '3':
-      SPI.endTransaction();
-      SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE2));
-      FileRW(3);
-      break;
-    case '4':
-      SPI.endTransaction();
       SPI.beginTransaction(SPISettings(250000, MSBFIRST, SPI_MODE3));
-      FileRW(4);
+      FileRW("test3.txt", modeNum);
+      SPI.endTransaction();
       break;
   }
   }
 }
 
 
-void FileRW(int num){
-  testF = SD.open("test.txt", FILE_WRITE);
-  testF.println(num);
-  testF.close();
-  Serial.println("done.");
+void FileRW(const char *file_name, char mode){
+  testF = SD.open(file_name, FILE_WRITE);
+  if(testF){
+    testF.print("현재 모드는 : ");
+    testF.println(mode);
+    testF.close();
+    Serial.println("done.");
+  }
+  else{
+    Serial.println("실패");
+  }
+
 }

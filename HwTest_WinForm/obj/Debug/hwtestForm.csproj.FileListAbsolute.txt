@@ -18,3 +18,13 @@ D:\HwTest\HWGit\hwtestForm\obj\Debug\hwtestForm.csproj.GenerateResource.cache
 D:\HwTest\HWGit\hwtestForm\obj\Debug\hwtestForm.csproj.CoreCompileInputs.cache
 D:\HwTest\HWGit\hwtestForm\obj\Debug\hwtestForm.exe
 D:\HwTest\HWGit\hwtestForm\obj\Debug\hwtestForm.pdb
+D:\HwTest\HWGit\HwTest_WinForm\bin\Debug\hwtestForm.exe.config
+D:\HwTest\HWGit\HwTest_WinForm\bin\Debug\hwtestForm.exe
+D:\HwTest\HWGit\HwTest_WinForm\bin\Debug\hwtestForm.pdb
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.csproj.AssemblyReference.cache
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.Form1.resources
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.Properties.Resources.resources
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.csproj.GenerateResource.cache
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.csproj.CoreCompileInputs.cache
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.exe
+D:\HwTest\HWGit\HwTest_WinForm\obj\Debug\hwtestForm.pdb
